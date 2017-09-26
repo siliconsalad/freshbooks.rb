@@ -18,7 +18,7 @@ module FreshBooks
     def self.log_level=(level)
       @@logger.level = level
     end
-    self.log_level = Logger::WARN
+    self.log_level = Logger::DEBUG
 
     def initialize(account_url, auth_token, request_headers = {}, options = {})
       raise InvalidAccountUrlError.new("account_url is expected to be in the form www.example.com without any protocol string or trailing query parameters") unless account_url =~ /^[0-9a-zA-Z\-_]+\.(freshbooks|billingarm)\.com$/
